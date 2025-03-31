@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react"
 import * as math from "mathjs"
 import MemoryLog from "./MemoryLog.jsx"
@@ -380,6 +382,38 @@ const Calculator = () => {
     "MR",
     "MS",
   ]
+
+  useEffect(() => {
+    const viewportMeta = document.querySelector('meta[name="viewport"]')
+    if (!viewportMeta) {
+      const meta = document.createElement("meta")
+      meta.name = "viewport"
+      meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      document.getElementsByTagName("head")[0].appendChild(meta)
+    } else {
+      viewportMeta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    }
+
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) {
+      document.body.classList.add("mobile-view")
+    } else {
+      document.body.classList.remove("mobile-view")
+    }
+
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        document.body.classList.add("mobile-view")
+      } else {
+        document.body.classList.remove("mobile-view")
+      }
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   return (
     <div className="calculator">
