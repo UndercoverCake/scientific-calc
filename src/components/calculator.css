@@ -1,0 +1,92 @@
+/* Calculator.css */
+
+/* Memory Log Styling */
+.memory-log {
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background: #2c3e50; /* Darker background to match a modern look */
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .memory-log h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  
+  .close-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    float: right;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .close-btn:hover {
+    background: #c0392b;
+  }
+  
+  .memory-log ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .memory-log li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #34495e;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .memory-log li:hover {
+    background: #3a536e;
+  }
+  
+  .memory-log li button {
+    background: #3498db;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .memory-log li button:hover {
+    background: #2980b9;
+  }
+  
+  /* Animation for smooth fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
