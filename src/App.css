@@ -6,8 +6,8 @@
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5), inset 0px 1px 1px rgba(255, 255, 255, 0.1);
   text-align: center;
   border: 1px solid #30305a;
-  position: relative; 
-  margin: 0 auto; 
+  position: relative;
+  margin: 0 auto;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
   color: white;
   margin: 0;
   background-image: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
-  padding: 0 340px; 
+  padding: 0 340px;
 }
 
 .display input {
@@ -122,5 +122,25 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .calculator {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  body {
+    padding: 10px;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator {
+    padding: 15px 10px;
+  }
 }
 

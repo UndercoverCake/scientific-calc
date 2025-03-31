@@ -31,10 +31,10 @@ const InstructionsLog = ({ onClose }) => {
             <strong>sin, cos, tan</strong>: Trigonometric functions
           </li>
           <li>
-            <strong>SHIFT</strong>: Toggle inverse trigonometric functions (sin⁻¹, cos⁻¹, tan⁻¹)
+            <strong>SHIFT</strong>: Toggle inverse trig functions
           </li>
           <li>
-            <strong>HYP</strong>: Toggle hyperbolic functions (sinh, cosh, tanh)
+            <strong>HYP</strong>: Toggle hyperbolic functions
           </li>
           <li>
             <strong>log</strong>: Logarithm base 10
@@ -49,7 +49,7 @@ const InstructionsLog = ({ onClose }) => {
             <strong>%</strong>: Percentage
           </li>
           <li>
-            <strong>Deg/Rad</strong>: Toggle between degrees and radians
+            <strong>Deg/Rad</strong>: Toggle degrees/radians
           </li>
         </ul>
 
@@ -66,7 +66,7 @@ const InstructionsLog = ({ onClose }) => {
         <h4>Memory Functions</h4>
         <ul>
           <li>
-            <strong>MS</strong>: Memory Store - store current value in memory
+            <strong>MS</strong>: Memory Store - store current value
           </li>
           <li>
             <strong>MR</strong>: Memory Recall - recall last stored value
@@ -75,7 +75,7 @@ const InstructionsLog = ({ onClose }) => {
             <strong>M+</strong>: Memory Add - add current value to memory
           </li>
           <li>
-            <strong>M-</strong>: Memory Subtract - subtract current value from memory
+            <strong>M-</strong>: Memory Subtract - subtract from memory
           </li>
           <li>
             <strong>MC</strong>: Memory Clear - clear all memory

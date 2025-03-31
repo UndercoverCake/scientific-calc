@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import * as math from "mathjs"
 import MemoryLog from "./MemoryLog.jsx"
