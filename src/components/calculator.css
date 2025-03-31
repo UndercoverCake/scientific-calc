@@ -1,92 +1,400 @@
-/* Calculator.css */
-
-/* Memory Log Styling */
 .memory-log {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 20px); 
+  background: #1a1a2e;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  font-family: "Roboto", Arial, sans-serif;
+  border: 1px solid #30305a;
+  z-index: 1000;
+  max-height: 100%;
+  overflow-y: auto;
+  animation: slideInFromRight 0.3s ease-in-out;
+}
+
+.memory-log h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #00ff9d;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #7ec8e3;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: #d13652;
+}
+
+.memory-log ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.memory-log li {
+  display: flex;
+  flex-direction: column;
+  background: #16213e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.memory-log li:hover {
+  background: #1f3a63;
+}
+
+.memory-log li strong {
+  color: #00ff9d;
+  font-family: "Courier New", monospace;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  text-align: center;
+  display: block;
+}
+
+.memory-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  width: 100%;
+}
+
+.memory-log li button {
+  background: #0f3460;
+  border: none;
+  color: white;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.memory-log li button:hover {
+  background: #2a4d80;
+}
+
+.memory-empty {
+  text-align: center;
+  padding: 15px;
+  color: #7ec8e3;
+  background: #16213e;
+  border-radius: 8px;
+}
+
+.calculator {
+  position: relative;
+}
+
+.history-log {
+  position: absolute;
+  top: 0;
+  right: auto; 
+  left: -340px; 
+  background: #1a1a2e;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  font-family: "Roboto", Arial, sans-serif;
+  border: 1px solid #30305a;
+  z-index: 1000;
+  max-height: 100%;
+  overflow-y: auto;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out 0.05s forwards;
+}
+
+.instructions-log {
+  position: absolute;
+  top: 0;
+  right: auto;
+  left: -340px;
+  background: #1a1a2e;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  font-family: "Roboto", Arial, sans-serif;
+  border: 1px solid #30305a;
+  z-index: 1000;
+  max-height: 100%;
+  overflow-y: auto;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out 0.05s forwards;
+}
+
+.instructions-log h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #00ff9d;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #7ec8e3;
+}
+
+.instructions-log h4 {
+  color: #00ff9d;
+  margin: 15px 0 5px 0;
+}
+
+.instructions-log ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 5px 0 15px 0;
+}
+
+.instructions-log li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.instructions-content {
+  background: #16213e;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.memory-log.with-history,
+.memory-log.with-instructions {
+  left: calc(100% + 20px);
+}
+
+.history-log.with-memory,
+.history-log.with-instructions {
+  left: -340px; 
+}
+
+.instructions-log.with-memory,
+.instructions-log.with-history {
+  left: -340px;
+}
+
+.history-log.solo,
+.instructions-log.solo {
+  left: -340px;
+}
+
+.history-log h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e94560;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #7ec8e3;
+}
+
+.history-log ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.history-item {
+  background: #16213e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.history-item:hover {
+  background: #1f3a63;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.history-expression {
+  color: #7ec8e3;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.history-result {
+  color: #00ff9d;
+  font-family: "Courier New", monospace;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+}
+
+.history-empty {
+  text-align: center;
+  padding: 15px;
+  color: #7ec8e3;
+  background: #16213e;
+  border-radius: 8px;
+}
+
+.history-footer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.clear-history-btn {
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.clear-history-btn:hover {
+  background: #d13652;
+}
+
+.panel-toggles {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.panel-toggle-btn {
+  background: #16213e;
+  color: #7ec8e3;
+  border: 1px solid #30305a;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.panel-toggle-btn:hover {
+  background: #1f3a63;
+}
+
+.panel-toggle-btn.active {
+  background: #0f3460;
+  color: #00ff9d;
+  border-color: #00ff9d;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f0f1a;
+  color: white;
+  margin: 0;
+  background-image: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+  padding: 0 340px; 
+}
+
+body.panels-open {
+  padding: 0;
+}
+
+.mode-indicator {
+  margin: 10px 0;
+  padding: 8px;
+  background: #16213e;
+  border-radius: 5px;
+  font-size: 0.85em;
+  color: #7ec8e3;
+  display: inline-block;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1200px) {
+  .memory-log,
+  .history-log,
+  .instructions-log {
     position: fixed;
     top: 50%;
-    right: 10%;
     transform: translateY(-50%);
-    background: #2c3e50; /* Darker background to match a modern look */
-    color: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 220px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    font-family: Arial, sans-serif;
-    animation: fadeIn 0.3s ease-in-out;
+    max-height: 80vh;
+    z-index: 1001;
   }
-  
-  .memory-log h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
-    text-align: center;
+
+  .memory-log {
+    right: 20px;
+    left: auto;
   }
-  
-  .close-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    float: right;
-    transition: background 0.3s ease-in-out;
+
+  .history-log,
+  .instructions-log {
+    left: 20px;
+    right: auto;
   }
-  
-  .close-btn:hover {
-    background: #c0392b;
+
+  body.panels-open {
+    padding: 0 20px;
   }
-  
-  .memory-log ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .memory-log,
+  .history-log,
+  .instructions-log {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 80vh;
+    z-index: 1001;
   }
-  
-  .memory-log li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #34495e;
-    padding: 8px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .memory-log li:hover {
-    background: #3a536e;
-  }
-  
-  .memory-log li button {
-    background: #3498db;
-    border: none;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    margin-left: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .memory-log li button:hover {
-    background: #2980b9;
-  }
-  
-  /* Animation for smooth fade-in */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
+
