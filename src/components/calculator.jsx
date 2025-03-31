@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as math from "mathjs";
-import MemoryLog from "./MemoryLog"; 
+import MemoryLog from "./MemoryLog.jsx"; 
 
 const Calculator = () => {
   const [expression, setExpression] = useState("");
